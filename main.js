@@ -7,14 +7,13 @@ let minutes = 0;
 let hours = 0;
 
 
-//初始化
-
+//初始化画布，生成基本样式
 initClock()
-
+//保存基本样式
 let imgData = hb.getImageData(0, 0, 400, 400);
-
+//初次渲染画布
 drawPin()
-
+//每隔一秒，重新渲染画布
 setInterval(()=>{
     //hb.translate(200, 200)
     hb.clearRect(-200,-200,400,400)
@@ -23,37 +22,9 @@ setInterval(()=>{
     drawPin()
 },1000)
 
-// 获取时间，小时，分钟，秒
-
-
-
-// setInterval(()=>{
-//         hb.clearRect(-200,-200,400,400);
-//         initClock()
-//         drawPin()
-//     }
-//     ,1000)
-
-
-//生成指针
-function drawPin() {
-    showTime()
-    //秒针
-    drawSecPin()
-    // 分针
-    drawMinPin()
-    // 时针
-    drawHourPin()
-}
-
-
-
-
-
-
 //封装函数
 
-
+//初始化
 function initClock(){
     //设置表盘数字
     setNum()
@@ -62,7 +33,6 @@ function initClock(){
     //指针盘
     pin()
 }
-
 // 获取时间，小时，分钟，秒
 function showTime() {
     let now = new Date();
@@ -77,7 +47,6 @@ function showTime() {
     minutes = smoothmin;
     hours = hour;
 }
-
 //表盘
 //设置表盘数字
 function setNum() {
@@ -141,7 +110,6 @@ function setClockLayout() {
     hb.stroke()
     hb.closePath()
 }
-
 //指针
 //指针盘
 function pin() {
@@ -162,6 +130,19 @@ function pin() {
     hb.arc(0, 0, 3, 0, 2 * Math.PI)
     hb.closePath()
     hb.fill()
+}
+
+
+
+//生成指针
+function drawPin() {
+    showTime()
+    //秒针
+    drawSecPin()
+    // 分针
+    drawMinPin()
+    // 时针
+    drawHourPin()
 }
 // 秒针指针
 function drawSecPin() {

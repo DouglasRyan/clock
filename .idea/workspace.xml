@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="510fc983-420b-41eb-8c64-cc54422a0e1e" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,13 +27,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+            <state relative-caret-position="128">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
+                <element signature="e#337#476#0" />
+                <element signature="n#!!block;n#initClock#0" />
                 <element signature="n#!!block;n#showTime#0" />
                 <element signature="n#!!block;n#setNum#0" />
                 <element signature="n#!!block;n#setClockLayout#0" />
                 <element signature="n#!!block;n#pin#0" />
+                <element signature="n#!!block;n#drawPin#0" />
+                <element signature="n#!!block;n#drawSecPin#0" />
                 <element signature="n#!!block;n#drawMinPin#0" />
                 <element signature="n#!!block;n#drawHourPin#0" />
               </folding>
@@ -138,12 +138,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564822491024</updated>
-      <workItem from="1564822492286" duration="3449000" />
+      <workItem from="1564822492286" duration="3689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3449000" />
+    <option name="totallyTimeSpent" value="3689000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
@@ -199,13 +199,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        <state relative-caret-position="128">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
+            <element signature="e#337#476#0" />
+            <element signature="n#!!block;n#initClock#0" />
             <element signature="n#!!block;n#showTime#0" />
             <element signature="n#!!block;n#setNum#0" />
             <element signature="n#!!block;n#setClockLayout#0" />
             <element signature="n#!!block;n#pin#0" />
+            <element signature="n#!!block;n#drawPin#0" />
+            <element signature="n#!!block;n#drawSecPin#0" />
             <element signature="n#!!block;n#drawMinPin#0" />
             <element signature="n#!!block;n#drawHourPin#0" />
           </folding>
