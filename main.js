@@ -16,9 +16,37 @@ setClockLayout()
 
 // 获取时间，小时，分钟，秒
 showTime()
+//生成指针
+//指针盘
+pin()
+//秒针
+drawSecPin()
+// 分针
+drawMinPin()
+// 时针
+drawHourPin()
 
-// 画秒
-
+// 秒针指针
+function drawSecPin() {
+    console.log(seconds)
+    binBack.save();
+    binBack.rotate(seconds / 60 * 2 * Math.PI-Math.PI/2); 
+    binBack.beginPath();
+    binBack.fillStyle = '#DE6857'; 
+    binBack.lineWidth = 2; 
+    binBack.lineJoin = "bevel"; 
+    binBack.miterLimit = 10; 
+    binBack.moveTo(8,-1); 
+    binBack.lineTo(8,1); 
+    binBack.lineTo(75,1); 
+    binBack.lineTo(75,5);
+    binBack.lineTo(80,0);
+    binBack.lineTo(75,-5);
+    binBack.lineTo(75,-1);
+    binBack.fill(); 
+    binBack.closePath(); 
+    binBack.restore();
+}
 
 
 // 获取时间，小时，分钟，秒
@@ -42,15 +70,7 @@ function showTime() {
 
 
 
-//生成指针
-//指针盘
-pin()
-//秒针
-drawSecPin()
-// 分针
-drawMinPin()
-// 时针
-drawHourPin()
+
 
 
 
@@ -140,26 +160,26 @@ function pin() {
     hb.closePath()
     hb.fill()
 }
-//秒针
-function drawSecPin() {
-    binBack.save();
-    binBack.beginPath();
-    binBack.strokeStyle = '#DE6857';
-    binBack.lineWidth = 1;
-    binBack.lineJoin = "bevel";
-    binBack.miterLimit = 10;
-    binBack.moveTo(8, -1);
-    binBack.lineTo(8, 1);
-    binBack.lineTo(70, 1);
-    binBack.lineTo(70, 5);
-    binBack.lineTo(80, 0);
-    binBack.lineTo(70, -5);
-    binBack.lineTo(70, -1);
-    binBack.lineTo(8, -1);
-    binBack.fill();
-    binBack.closePath();
-    binBack.restore();
-}
+// //秒针
+// function drawSecPin() {
+//     binBack.save();
+//     binBack.beginPath();
+//     binBack.strokeStyle = '#DE6857';
+//     binBack.lineWidth = 1;
+//     binBack.lineJoin = "bevel";
+//     binBack.miterLimit = 10;
+//     binBack.moveTo(8, -1);
+//     binBack.lineTo(8, 1);
+//     binBack.lineTo(70, 1);
+//     binBack.lineTo(70, 5);
+//     binBack.lineTo(80, 0);
+//     binBack.lineTo(70, -5);
+//     binBack.lineTo(70, -1);
+//     binBack.lineTo(8, -1);
+//     binBack.fill();
+//     binBack.closePath();
+//     binBack.restore();
+// }
 //分针
 function drawMinPin() {
     binBack.save();
