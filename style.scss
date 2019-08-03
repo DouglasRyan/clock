@@ -1,5 +1,12 @@
-canvas{
-    box-sizing: border-box;
-    display: block;
-    border: 1px solid black;
+.main{
+    width:400px;
+    margin:0 auto;
+    canvas{
+        box-sizing: border-box;
+        display: block;
+    }
+    .time{
+        text-align: center;
+        letter-spacing:3px;
+    }
 }

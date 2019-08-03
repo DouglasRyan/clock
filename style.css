@@ -1,4 +1,9 @@
-canvas {
-  box-sizing: border-box;
-  display: block;
-  border: 1px solid black; }
+.main {
+  width: 400px;
+  margin: 0 auto; }
+  .main canvas {
+    box-sizing: border-box;
+    display: block; }
+  .main .time {
+    text-align: center;
+    letter-spacing: 3px; }

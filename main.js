@@ -2,9 +2,11 @@ let canvas = document.getElementById('canvas');//画布
 let hb = canvas.getContext('2d');//2D画板
 let numBack = canvas.getContext('2d');//2D画板,表盘数字
 let binBack = canvas.getContext('2d');//2D画板，表盘指针
-let seconds = 0
+let seconds = 0;
 let minutes = 0;
 let hours = 0;
+
+
 
 
 //初始化画布，生成基本样式
@@ -13,6 +15,7 @@ initClock()
 let imgData = hb.getImageData(0, 0, 400, 400);
 //初次渲染画布
 drawPin()
+setTime()
 //每隔一秒，重新渲染画布
 setInterval(()=>{
     //hb.translate(200, 200)
@@ -20,10 +23,10 @@ setInterval(()=>{
     hb.translate(0, 0)
     hb.putImageData(imgData,0,0);
     drawPin()
+    setTime()
 },1000)
 
 //封装函数
-
 //初始化
 function initClock(){
     //设置表盘数字
@@ -203,4 +206,19 @@ function drawHourPin() {
     binBack.fill();
     binBack.closePath();
     binBack.restore();
+}
+
+//设置时间
+function setTime(){
+    let today = new Date()
+    let month = today.getMonth()
+    month = month + 1
+    if (month>12){
+        month = 1
+    }
+    let day = today.getDate()
+    let hours = today.getHours()
+    let minutes = today.getMinutes()
+    let seconds = today.getSeconds()
+    time.innerText = `${month}`+"月"+`${day}`+"日"+`${hours}`+"时"+`${minutes}`+"分"+`${seconds}`+"秒"
 }
