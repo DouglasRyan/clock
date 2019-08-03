@@ -37,14 +37,16 @@ binBack.strokeStyle = '#DE6857';
 binBack.lineWidth = 1;
 binBack.lineJoin = "bevel";
 binBack.miterLimit = 10;
-binBack.moveTo(0, 0);
-binBack.lineTo(3, -115);
-binBack.lineTo(13, -105);
-binBack.lineTo(0, -150);
-binBack.lineTo(-13, -105);
-binBack.lineTo(-3, -125);
-binBack.lineTo(0, 0);
-binBack.stroke();
+binBack.moveTo(8, -1);
+binBack.lineTo(8, 1);
+binBack.lineTo(70, 1);
+binBack.lineTo(70, 5);
+binBack.lineTo(80, 0);
+binBack.lineTo(70, -5);
+binBack.lineTo(70, -1);
+
+binBack.lineTo(8, -1);
+binBack.fill();
 binBack.closePath();
 binBack.restore();
 
