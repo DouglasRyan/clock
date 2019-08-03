@@ -2,7 +2,7 @@ let canvas = document.getElementById('canvas');//画布
 let hb = canvas.getContext('2d');//2D画板
 let numBack = canvas.getContext('2d');//2D画板
 let binBack = canvas.getContext('2d');//2D画板
-
+let minBack = canvas.getContext('2d');//2D画板
 
 setNum()
 
@@ -13,7 +13,7 @@ hb.translate(200, 200)
 //指针圆心
 pin()
 function pin() {
-     hb.fillStyle = "#EA887A"
+    hb.fillStyle = "#EA887A"
     hb.beginPath()
     hb.arc(0, 0, 9, 0, 2 * Math.PI)
     hb.closePath()
@@ -32,24 +32,49 @@ function pin() {
     hb.fill()
 }
 //秒针
-binBack.beginPath();
-binBack.strokeStyle = '#DE6857';
-binBack.lineWidth = 1;
-binBack.lineJoin = "bevel";
-binBack.miterLimit = 10;
-binBack.moveTo(8, -1);
-binBack.lineTo(8, 1);
-binBack.lineTo(70, 1);
-binBack.lineTo(70, 5);
-binBack.lineTo(80, 0);
-binBack.lineTo(70, -5);
-binBack.lineTo(70, -1);
 
-binBack.lineTo(8, -1);
-binBack.fill();
-binBack.closePath();
-binBack.restore();
+drawSecPin()
+function drawSecPin() {
+    binBack.save();
+    binBack.beginPath();
+    binBack.strokeStyle = '#DE6857';
+    binBack.lineWidth = 1;
+    binBack.lineJoin = "bevel";
+    binBack.miterLimit = 10;
+    binBack.moveTo(8, -1);
+    binBack.lineTo(8, 1);
+    binBack.lineTo(70, 1);
+    binBack.lineTo(70, 5);
+    binBack.lineTo(80, 0);
+    binBack.lineTo(70, -5);
+    binBack.lineTo(70, -1);
+    binBack.lineTo(8, -1);
+    binBack.fill();
+    binBack.closePath();
+    binBack.restore();
+}
 
+
+// //分针
+drawMinPin()
+function drawMinPin() {
+    binBack.save();
+    binBack.beginPath();
+    binBack.fillStyle = '#666665';
+    binBack.lineWidth = 1;
+    binBack.lineJoin = "bevel";
+    binBack.miterLimit = 10;
+    binBack.moveTo(-2, -9);
+    binBack.lineTo(2, -9);
+    binBack.lineTo(2 , -70);
+    binBack.lineTo(8, -70);
+    binBack.lineTo(-8, -70);
+    binBack.lineTo(-2, -70);
+    binBack.lineTo(-2, -9);
+    binBack.fill();
+    binBack.closePath();
+    binBack.restore();
+}
 
 // drawSecPin()
 // function drawSecPin() {
@@ -139,8 +164,8 @@ hb.closePath()
 //外表盘
 hb.beginPath()
 hb.strokeStyle = 'red'
-hb.arc(0, 0, 130, 0, Math.PI * 2);
-hb.lineWidth = 8
+hb.arc(0, 0, 129, 0, Math.PI * 2);
+hb.lineWidth = 6
 hb.stroke()
 hb.closePath()
 
