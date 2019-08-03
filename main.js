@@ -26,41 +26,21 @@ drawMinPin()
 // 时针
 drawHourPin()
 
-// 秒针指针
-function drawSecPin() {
-    console.log(seconds)
-    binBack.save();
-    binBack.rotate(seconds / 60 * 2 * Math.PI-Math.PI/2); 
-    binBack.beginPath();
-    binBack.fillStyle = '#DE6857'; 
-    binBack.lineWidth = 2; 
-    binBack.lineJoin = "bevel"; 
-    binBack.miterLimit = 10; 
-    binBack.moveTo(8,-1); 
-    binBack.lineTo(8,1); 
-    binBack.lineTo(75,1); 
-    binBack.lineTo(75,5);
-    binBack.lineTo(80,0);
-    binBack.lineTo(75,-5);
-    binBack.lineTo(75,-1);
-    binBack.fill(); 
-    binBack.closePath(); 
-    binBack.restore();
-}
+
 
 
 // 获取时间，小时，分钟，秒
 function showTime() {
-    let now = new Date(); 
-    let hrs = now.getHours(); 
-    let min = now.getMinutes(); 
-    let sec = now.getSeconds(); 
-    let mil = now.getMilliseconds(); 
-    let smoothsec = sec + (mil / 1000); 
-    let smoothmin = min + (smoothsec / 60); 
-    let hour = hrs + (smoothmin / 60); 
-    seconds = smoothsec; 
-    minutes = smoothmin; 
+    let now = new Date();
+    let hrs = now.getHours();
+    let min = now.getMinutes();
+    let sec = now.getSeconds();
+    let mil = now.getMilliseconds();
+    let smoothsec = sec + (mil / 1000);
+    let smoothmin = min + (smoothsec / 60);
+    let hour = hrs + (smoothmin / 60);
+    seconds = smoothsec;
+    minutes = smoothmin;
     hours = hour;
 }
 
@@ -77,6 +57,7 @@ function showTime() {
 
 //封装函数
 
+//表盘
 //设置表盘数字
 function setNum() {
     numBack.save();
@@ -139,6 +120,7 @@ function setClockLayout() {
     hb.stroke()
     hb.closePath()
 }
+
 //指针
 //指针盘
 function pin() {
@@ -160,29 +142,31 @@ function pin() {
     hb.closePath()
     hb.fill()
 }
-// //秒针
-// function drawSecPin() {
-//     binBack.save();
-//     binBack.beginPath();
-//     binBack.strokeStyle = '#DE6857';
-//     binBack.lineWidth = 1;
-//     binBack.lineJoin = "bevel";
-//     binBack.miterLimit = 10;
-//     binBack.moveTo(8, -1);
-//     binBack.lineTo(8, 1);
-//     binBack.lineTo(70, 1);
-//     binBack.lineTo(70, 5);
-//     binBack.lineTo(80, 0);
-//     binBack.lineTo(70, -5);
-//     binBack.lineTo(70, -1);
-//     binBack.lineTo(8, -1);
-//     binBack.fill();
-//     binBack.closePath();
-//     binBack.restore();
-// }
-//分针
+// 秒针指针
+function drawSecPin() {
+    console.log(seconds)
+    binBack.save();
+    binBack.rotate(seconds / 60 * 2 * Math.PI - Math.PI / 2);
+    binBack.beginPath();
+    binBack.fillStyle = '#DE6857';
+    binBack.lineWidth = 2;
+    binBack.lineJoin = "bevel";
+    binBack.miterLimit = 10;
+    binBack.moveTo(8, -1);
+    binBack.lineTo(8, 1);
+    binBack.lineTo(75, 1);
+    binBack.lineTo(75, 5);
+    binBack.lineTo(80, 0);
+    binBack.lineTo(75, -5);
+    binBack.lineTo(75, -1);
+    binBack.fill();
+    binBack.closePath();
+    binBack.restore();
+}
+// 分针指针
 function drawMinPin() {
     binBack.save();
+    binBack.rotate(minutes * 6 * Math.PI / 180);
     binBack.beginPath();
     binBack.fillStyle = '#666665';
     binBack.lineWidth = 1;
@@ -199,19 +183,22 @@ function drawMinPin() {
     binBack.closePath();
     binBack.restore();
 }
-//时针
+// 时针指针
 function drawHourPin() {
     binBack.save();
+    binBack.rotate(hours * 30 * Math.PI / 180);
     binBack.beginPath();
     binBack.fillStyle = '#666665';
     binBack.lineWidth = 1;
     binBack.lineJoin = "bevel";
     binBack.miterLimit = 10;
-    binBack.moveTo(-8, 3);
-    binBack.lineTo(-8, -3);
-    binBack.lineTo(-60, -3);
-    binBack.lineTo(-60, 3);
-    binBack.lineTo(-8, 3);
+    binBack.moveTo(-2, -9);
+    binBack.lineTo(2, -9);
+    binBack.lineTo(2, -65);
+    binBack.lineTo(8, -65);
+    binBack.lineTo(-8, -65);
+    binBack.lineTo(-2, -65);
+    binBack.lineTo(-2, -9);
     binBack.fill();
     binBack.closePath();
     binBack.restore();
