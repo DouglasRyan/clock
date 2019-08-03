@@ -2,11 +2,44 @@ let canvas = document.getElementById('canvas');//画布
 let hb = canvas.getContext('2d');//2D画板
 let numBack = canvas.getContext('2d');//2D画板,表盘数字
 let binBack = canvas.getContext('2d');//2D画板，表盘指针
+let seconds = 0
+let minutes = 0;
+let hours = 0;
+
+
+
 
 //设置表盘数字
 setNum()
 hb.translate(200, 200)
 setClockLayout()
+
+// 获取时间，小时，分钟，秒
+showTime()
+
+// 画秒
+
+
+
+// 获取时间，小时，分钟，秒
+function showTime() {
+    let now = new Date(); 
+    let hrs = now.getHours(); 
+    let min = now.getMinutes(); 
+    let sec = now.getSeconds(); 
+    let mil = now.getMilliseconds(); 
+    let smoothsec = sec + (mil / 1000); 
+    let smoothmin = min + (smoothsec / 60); 
+    let hour = hrs + (smoothmin / 60); 
+    seconds = smoothsec; 
+    minutes = smoothmin; 
+    hours = hour;
+}
+
+
+
+
+
 
 
 //生成指针

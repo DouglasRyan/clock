@@ -14,7 +14,13 @@ ctxBack.lineWidth = 1;
 ctxBack.shadowBlur = 0;
 ctxBack.shadowColor = '#F0F8FF';
 function pageInit() {
-    showTime(); showBack(); drawSecPin(); drawMinPin(); drawHouPin(); setPoint(); setNum();
+    showTime(); 
+    showBack(); 
+    drawSecPin(); 
+    drawMinPin(); 
+    drawHouPin(); 
+    setPoint(); 
+    setNum();
 }
 function setNum() {
     numBack.save();
@@ -57,7 +63,21 @@ function degToRad(degree) {
     return result;
 }
 function showTime() {
-    var now = new Date(); var today = now.toLocaleDateString(); var time = now.toLocaleTimeString(); var day = now.getDay(); var hrs = now.getHours(); var min = now.getMinutes(); var sec = now.getSeconds(); var mil = now.getMilliseconds(); var smoothsec = sec + (mil / 1000); var smoothmin = min + (smoothsec / 60); var hours = hrs + (smoothmin / 60); milliseconds = smoothsec; minutes = smoothmin; hour = hours; switch (day) {
+    var now = new Date(); 
+    var today = now.toLocaleDateString(); 
+    var time = now.toLocaleTimeString(); 
+    var day = now.getDay(); 
+    var hrs = now.getHours(); 
+    var min = now.getMinutes(); 
+    var sec = now.getSeconds(); 
+    var mil = now.getMilliseconds(); 
+    var smoothsec = sec + (mil / 1000); 
+    var smoothmin = min + (smoothsec / 60); 
+    var hours = hrs + (smoothmin / 60); 
+    milliseconds = smoothsec; 
+    minutes = smoothmin; 
+    hour = hours; 
+    switch (day) {
         case 1: date = '一'
             break; case 2: date = '二'
             break; case 3: date = '三'
