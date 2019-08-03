@@ -55,7 +55,7 @@ function drawSecPin() {
 }
 
 
-// //分针
+// 分针
 drawMinPin()
 function drawMinPin() {
     binBack.save();
@@ -71,6 +71,25 @@ function drawMinPin() {
     binBack.lineTo(-8, -70);
     binBack.lineTo(-2, -70);
     binBack.lineTo(-2, -9);
+    binBack.fill();
+    binBack.closePath();
+    binBack.restore();
+}
+
+// 分针
+drawHourPin()
+function drawHourPin() {
+    binBack.save();
+    binBack.beginPath();
+    binBack.fillStyle = '#666665';
+    binBack.lineWidth = 1;
+    binBack.lineJoin = "bevel";
+    binBack.miterLimit = 10;
+    binBack.moveTo(-8, 3);
+    binBack.lineTo(-8, -3);
+    binBack.lineTo(-60, -3);
+    binBack.lineTo(-60, 3);
+    binBack.lineTo(-8, 3);
     binBack.fill();
     binBack.closePath();
     binBack.restore();
