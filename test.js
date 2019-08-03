@@ -34,7 +34,16 @@ function setNum() {
 }
 function drawSecPin() {
     ctxBack.save();
-    ctxBack.translate(250, 250); ctxBack.rotate(milliseconds / 60 * 2 * Math.PI); ctxBack.beginPath(); ctxBack.strokeStyle = '#AFEEEE'; ctxBack.lineWidth = 1; ctxBack.lineJoin = "bevel"; ctxBack.miterLimit = 10; ctxBack.moveTo(0, 30); ctxBack.lineTo(3, -175); ctxBack.lineTo(13, -165); ctxBack.lineTo(0, -210); ctxBack.lineTo(-13, -165); ctxBack.lineTo(-3, -175); ctxBack.lineTo(0, 30); ctxBack.stroke(); ctxBack.closePath(); ctxBack.restore();
+    ctxBack.translate(250, 250); 
+    ctxBack.rotate(milliseconds / 60 * 2 * Math.PI); 
+    ctxBack.beginPath(); ctxBack.strokeStyle = '#AFEEEE'; 
+    ctxBack.lineWidth = 1; ctxBack.lineJoin = "bevel"; 
+    ctxBack.miterLimit = 10; ctxBack.moveTo(0, 30); 
+    ctxBack.lineTo(3, -175); ctxBack.lineTo(13, -165); 
+    ctxBack.lineTo(0, -210); ctxBack.lineTo(-13, -165); 
+    ctxBack.lineTo(-3, -175); ctxBack.lineTo(0, 30); 
+    ctxBack.stroke(); ctxBack.closePath(); 
+    ctxBack.restore();
 }
 function drawMinPin() { ctxBack.save(); ctxBack.translate(250, 250); ctxBack.rotate(minutes * 6 * Math.PI / 180); ctxBack.beginPath(); ctxBack.strokeStyle = '#20B2AA'; ctxBack.lineWidth = 1; ctxBack.lineJoin = "bevel"; ctxBack.miterLimit = 10; ctxBack.moveTo(0, 20); ctxBack.lineTo(3, -145); ctxBack.lineTo(10, -135); ctxBack.lineTo(0, -180); ctxBack.lineTo(-10, -135); ctxBack.lineTo(-3, -145); ctxBack.lineTo(0, 20); ctxBack.stroke(); ctxBack.closePath(); ctxBack.restore(); }
 function drawHouPin() { ctxBack.save(); ctxBack.translate(250, 250); ctxBack.rotate(hour * 30 * Math.PI / 180); ctxBack.beginPath(); ctxBack.strokeStyle = '#87CEFA'; ctxBack.lineWidth = 1; ctxBack.lineJoin = "bevel"; ctxBack.miterLimit = 10; ctxBack.moveTo(0, 20); ctxBack.lineTo(3, -110); ctxBack.lineTo(10, -100); ctxBack.lineTo(0, -150); ctxBack.lineTo(-10, -100); ctxBack.lineTo(-3, -110); ctxBack.lineTo(0, 20); ctxBack.stroke(); ctxBack.closePath(); ctxBack.restore(); }
