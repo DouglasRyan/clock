@@ -4,17 +4,6 @@ let numBack = canvas.getContext('2d');//2D画板
 setNum()
 
 hb.translate(200, 200)
-// for (let i = 0; i < 12; i++) {
-//     hb.beginPath()
-//     hb.rotate(Math.PI / 6)
-//     let a = i + 4
-//     if (a>12) {
-//         a = a -12
-//     }
-//     hb.fillText(`${a}`,80,5)
-//     hb.textAlign = "left";
-//     hb.closePath()
-// }
 
 //设置数字
 function setNum() {
@@ -22,14 +11,18 @@ function setNum() {
     numBack.save();
     numBack.translate(200, 200);
     numBack.beginPath();
-    numBack.fillStyle = 'red';
+    numBack.fillStyle = '#000';
     numBack.font = "15px Helvetica";
     for (var i = 0; i < 60; i++) {
         if (i % 5 == 0) {
             numBack.lineWidth = 5;
             var xPoint = Math.sin(i * 6 * 2 * Math.PI / 360) * 90;
             var yPoint = -Math.cos(i * 6 * 2 * Math.PI / 360) * 90;
-            numBack.fillText(i === 0 ? 12 : i / 5, i === 0 ? -15 : xPoint - 10, i === 0 ? -185 : i <= 30 ? yPoint + 5 : yPoint + 10);
+            numBack.fillText(
+                i === 0 ? 12 : i / 5, 
+                i === 0 ? -10 : xPoint - 5, 
+                i === 0 ? -85 : i <= 30 ? yPoint + 5 : yPoint + 10
+            );
         }
     }
     numBack.stroke(); 
@@ -55,13 +48,11 @@ for (let i = 0; i < 12; i++) {
     hb.beginPath()
     
     hb.strokeStyle = '#666666'
-    hb.lineWidth = 8
+    hb.lineWidth = 5
     hb.moveTo(100, 0)
     hb.lineTo(120, 0)
     hb.stroke()
-    hb.rotate(Math.PI / 6)    //每个30deg画一个时钟刻度线
-    let a = i
-    
+    hb.rotate(Math.PI / 6)    //每个30deg画一个时钟刻度线    
     hb.closePath()
 }
 
