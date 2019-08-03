@@ -7,27 +7,61 @@ let minutes = 0;
 let hours = 0;
 
 
+//初始化
 
+initClock()
 
-//设置表盘数字
-setNum()
-hb.translate(200, 200)
-setClockLayout()
+let imgData = hb.getImageData(0, 0, 400, 400);
+
+drawPin()
+
+setInterval(()=>{
+    //hb.translate(200, 200)
+    hb.clearRect(-200,-200,400,400)
+    hb.translate(0, 0)
+    hb.putImageData(imgData,0,0);
+    drawPin()
+},1000)
 
 // 获取时间，小时，分钟，秒
-showTime()
+
+
+
+// setInterval(()=>{
+//         hb.clearRect(-200,-200,400,400);
+//         initClock()
+//         drawPin()
+//     }
+//     ,1000)
+
+
 //生成指针
-//指针盘
-pin()
-//秒针
-drawSecPin()
-// 分针
-drawMinPin()
-// 时针
-drawHourPin()
+function drawPin() {
+    showTime()
+    //秒针
+    drawSecPin()
+    // 分针
+    drawMinPin()
+    // 时针
+    drawHourPin()
+}
 
 
 
+
+
+
+//封装函数
+
+
+function initClock(){
+    //设置表盘数字
+    setNum()
+    hb.translate(200, 200)
+    setClockLayout()
+    //指针盘
+    pin()
+}
 
 // 获取时间，小时，分钟，秒
 function showTime() {
@@ -43,19 +77,6 @@ function showTime() {
     minutes = smoothmin;
     hours = hour;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-//封装函数
 
 //表盘
 //设置表盘数字
@@ -144,7 +165,6 @@ function pin() {
 }
 // 秒针指针
 function drawSecPin() {
-    console.log(seconds)
     binBack.save();
     binBack.rotate(seconds / 60 * 2 * Math.PI - Math.PI / 2);
     binBack.beginPath();

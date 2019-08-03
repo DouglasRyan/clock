@@ -55,7 +55,12 @@ function drawMinPin() { ctxBack.save(); ctxBack.translate(250, 250); ctxBack.rot
 function drawHouPin() { 
     ctxBack.save(); ctxBack.translate(250, 250);
     ctxBack.rotate(hour * 30 * Math.PI / 180); ctxBack.beginPath(); ctxBack.strokeStyle = '#87CEFA'; ctxBack.lineWidth = 1; ctxBack.lineJoin = "bevel"; ctxBack.miterLimit = 10; ctxBack.moveTo(0, 20); ctxBack.lineTo(3, -110); ctxBack.lineTo(10, -100); ctxBack.lineTo(0, -150); ctxBack.lineTo(-10, -100); ctxBack.lineTo(-3, -110); ctxBack.lineTo(0, 20); ctxBack.stroke(); ctxBack.closePath(); ctxBack.restore(); }
-function setPoint() { ctxBack.beginPath(); ctxBack.fillStyle = 'black'; ctxBack.arc(250, 250, 3, 0, 2 * Math.PI); ctxBack.stroke(); }
+function setPoint() { 
+    ctxBack.beginPath(); 
+    ctxBack.fillStyle = 'black'; 
+    ctxBack.arc(250, 250, 3, 0, 2 * Math.PI); 
+    ctxBack.stroke(); 
+}
 function showBack() {
     for (var i = 0; i < 60; i++) { ctxBack.save(); ctxBack.translate(250, 250); ctxBack.rotate(i / 60 * 2 * Math.PI); ctxBack.beginPath(); ctxBack.strokeStyle = '#7FFFD4'; ctxBack.moveTo(0, -250); ctxBack.lineWidth = i % 5 == 0 ? 5 : 2; ctxBack.lineTo(0, -230); ctxBack.stroke(); ctxBack.closePath(); ctxBack.restore(); }
     ctxBack.beginPath(); ctxBack.arc(250, 250, 230, 0, 2 * Math.PI); ctxBack.stroke();
